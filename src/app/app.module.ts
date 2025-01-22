@@ -13,6 +13,11 @@ import { NzDividerModule } from "ng-zorro-antd/divider"
 import { NzListModule } from "ng-zorro-antd/list"
 import { NzFormModule } from "ng-zorro-antd/form"
 import { NzInputModule } from "ng-zorro-antd/input"
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header'
+import { NzTimelineModule } from 'ng-zorro-antd/timeline'
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions'
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +62,13 @@ registerLocaleData(en);
     NzDividerModule,
     NzListModule,
     NzFormModule,
-    NzInputModule
+    NzInputModule,
+    NzPageHeaderModule,
+    NzTimelineModule,
+    NzDescriptionsModule,
+    NzTagModule,
+    NzAvatarModule
+
   ],
   providers: [
     provideClientHydration(withEventReplay()),
