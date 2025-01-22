@@ -1,0 +1,105 @@
+nz-footer {
+    padding: 0;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 24px;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #2960f7;
+    transform: translateY(-2px);
+}
+
+.social-links i {
+    font-size: 20px;
+    color: white;
+}
+
+.contact-list,
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.contact-list i {
+    margin-top: 4px;
+}
+
+.service-list li {
+    margin-bottom: 0.75rem;
+}
+
+.contact-list a,
+.service-list a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.contact-list a:hover,
+.service-list a:hover {
+    color: #29c4f7;
+}
+
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 3rem 24px;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,56 @@
+<div class="container mt-5 pt-5">
+    <h1 class="text-center mb-5">Liên Hệ</h1>
+    <div class="row mb-5">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Thông Tin Liên Hệ</h2>
+                    <p><strong>Địa chỉ:</strong> A1/15 khu dân cư Đồng An, Bình Hòa 24, Thuận An, Bình Dương</p>
+                    <p><strong>Email:</strong> info&#64;phgroup.com</p>
+                    <p><strong>Điện thoại:</strong> (84) 123-456-789</p>
+                    <hr>
+                    <h3>Giờ Làm Việc</h3>
+                    <p>Thứ Hai - Thứ Sáu: 8:00 - 17:00</p>
+                    <p>Thứ Bảy - Chủ Nhật: Đóng cửa</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Gửi Tin Nhắn</h2>
+                    <form >
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" formControlName="name"
+                                placeholder="Nhập họ và tên">
+                            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+                                class="text-danger">
+                                Vui lòng nhập họ và tên!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email"
+                                placeholder="Nhập email">
+                            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+                                class="text-danger">
+                                Vui lòng nhập email hợp lệ!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Tin nhắn</label>
+                            <textarea class="form-control" id="message" rows="4" formControlName="message"
+                                placeholder="Nhập tin nhắn"></textarea>
+                            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                                class="text-danger">
+                                Vui lòng nhập tin nhắn!
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

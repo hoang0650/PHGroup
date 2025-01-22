@@ -1,0 +1,17 @@
+h1 {
+  color: #2960f7;
+}
+.btn-primary {
+  background-color: #2960f7;
+  border-color: #2960f7;
+}
+.btn-primary:hover {
+  background-color: #29c4f7;
+  border-color: #29c4f7;
+}
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}

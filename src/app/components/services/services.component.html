@@ -1,0 +1,20 @@
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title">Dịch vụ của chúng tôi</h2>
+        <div nz-row [nzGutter]="[24, 24]">
+            <div nz-col nzXs="24" nzSm="24" nzMd="8" *ngFor="let service of services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i nz-icon [nzType]="service.icon" nzTheme="outline"></i>
+                    </div>
+                    <h3 class="service-title">{{service.title}}</h3>
+                    <p class="service-description">{{service.description}}</p>
+                    <a class="service-link" [href]="service.link">
+                        Tìm hiểu thêm
+                        <i nz-icon nzType="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

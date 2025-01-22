@@ -1,0 +1,110 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 2rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(41, 96, 247, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 196, 247, 0.1) 0%, transparent 40%);
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #2960f7 0%, #29c4f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    font-size: 4rem;
+    margin-top: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.main-button {
+    background: linear-gradient(135deg, #2960f7 0%, #29c4f7 100%);
+    border: none;
+    padding: 0 2rem;
+    height: 48px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(41, 96, 247, 0.3);
+}
+
+.secondary-button {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0 2rem;
+    height: 48px;
+    font-size: 1rem;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    border-color: #29c4f7;
+    color: #29c4f7;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .gradient-text {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
