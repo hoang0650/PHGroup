@@ -1,0 +1,55 @@
+<div class="news-container">
+    <article class="news-article">
+      <!-- Article Header -->
+      <div class="article-header">
+        <h1 nz-typography>{{ article.title }}</h1>
+        <div class="article-meta">
+          <span>
+            <i nz-icon nzType="calendar" nzTheme="outline"></i>
+            {{ article.date | date:'dd/MM/yyyy' }}
+          </span>
+          <span>
+            <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
+            {{ article.readTime }} phút đọc
+          </span>
+        </div>
+      </div>
+  
+      <!-- Article Image -->
+      <div class="article-image">
+        <img nz-image nzSrc="article.imageUrl" alt="article.title" />
+      </div>
+  
+      <!-- Article Content -->
+      <div class="article-content">
+        <div class="content-text" [innerHTML]="article.content"></div>
+      </div>
+  
+      <!-- Author Info -->
+      <div class="article-author">
+        <nz-avatar [nzSrc]="article.author.avatar"></nz-avatar>
+        <div class="author-info">
+          <h4 nz-typography>{{ article.author.name }}</h4>
+          <p nz-typography nzType="secondary">{{ article.author.role }}</p>
+        </div>
+      </div>
+  
+      <!-- Related News -->
+      <div class="related-news">
+        <h2 nz-typography>Tin tức liên quan</h2>
+        <div nz-row [nzGutter]="[16, 16]">
+          <div nz-col [nzSpan]="8" *ngFor="let news of relatedNews">
+            <a [routerLink]="['/news', news.id]" class="related-news-item">
+              <img [src]="news.imageUrl" [alt]="news.title" />
+              <h3 nz-typography>{{ news.title }}</h3>
+              <p class="news-date">
+                <i nz-icon nzType="calendar" nzTheme="outline"></i>
+                {{ news.date | date:'dd/MM/yyyy' }}
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  

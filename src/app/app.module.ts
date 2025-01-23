@@ -33,6 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ServicesComponent } from './components/services/services.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MainComponent } from './components/main/main.component';
+import { NewsArticleDetailComponent } from './components/news-article-detail/news-article-detail.component';
 
 registerLocaleData(en);
 
@@ -43,7 +44,8 @@ registerLocaleData(en);
     FooterComponent,
     ServicesComponent,
     AboutUsComponent,
-    MainComponent
+    MainComponent,
+    NewsArticleDetailComponent
   ],
   imports: [
     BrowserModule,

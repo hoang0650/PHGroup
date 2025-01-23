@@ -1,64 +1,88 @@
 <div class="about-us-container mt-5">
-    <nz-card nzTitle="Giới Thiệu" [nzBordered]="false" class="about-us-card">
-      <div class="hero-section">
-        <h1 class="hero-title">PHGROUP Technology Solutions</h1>
-        <p class="hero-subtitle">Connecting Creativity, Reaching For The Future!</p>
+  <nz-card [nzBordered]="false" class="about-us-card">
+    <div class="hero-section">
+      <h1 nz-typography class="hero-title">PHGROUP Technology Solutions</h1>
+      <p nz-typography nzType="secondary" class="hero-subtitle">Connecting Creativity, Reaching For The Future!</p>
+    </div>
+
+    <nz-divider></nz-divider>
+
+    <div nz-row nzAlign="middle" [nzGutter]="24" class="story-section">
+      <div nz-col [nzXs]="24" [nzMd]="12">
+        <h2 nz-typography class="section-heading">Về Chúng Tôi</h2>
+        <nz-card [nzBordered]="false" class="info-card">
+          <p nz-typography><strong>CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ PHGROUP</strong></p>
+          <p nz-typography><strong>Tên Tiếng Anh: PHGROUP Technology Solutions Co., Ltd.</strong></p>
+          <p nz-typography><strong>Mã số thuế doanh nghiệp: 3703279135</strong></p>
+          <p nz-typography><strong>Trụ sở chính: A1/15 Khu Dân Cư Đồng An, Bình Hòa 24, Thuận An, Bình Dương.</strong></p>
+        </nz-card>
+        <p nz-typography>
+          PHGROUP là công ty hàng đầu trong lĩnh vực cung cấp giải pháp công nghệ. Chúng tôi tự hào về đội ngũ chuyên gia giàu kinh nghiệm và sự đổi mới không ngừng trong các dịch vụ của mình.
+        </p>
+        <p nz-typography>
+          Sứ mệnh của chúng tôi là giúp các doanh nghiệp phát triển thông qua việc áp dụng công nghệ tiên tiến và hiệu quả.
+        </p>
+        <button nz-button nzType="primary" nzSize="large" [routerLink]="['/solutions']" class="cta-button">
+          Khám phá thêm
+        </button>
       </div>
-  
-      <nz-divider></nz-divider>
-  
-      <div nz-row nzAlign="middle" nzGutter="24" class="story-section">
-        <div nz-col nzSpan="12">
-          <h2 class="section-heading">Về Chúng Tôi</h2>
-          <p>
-            <strong>CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ PHGROUP</strong><br>
-            <strong>Tên Tiếng Anh: PHGROUP Technology Solutions Co., Ltd.</strong><br>
-            <strong>Trụ sở chính: A1/15 Khu Dân Cư Đồng An, Bình Hòa 24, Thuận An, Bình Dương.</strong>
-          </p>
-          <p>
-            PHGROUP là công ty hàng đầu trong lĩnh vực cung cấp giải pháp công nghệ. Chúng tôi tự hào về đội ngũ chuyên gia giàu kinh nghiệm và sự đổi mới không ngừng trong các dịch vụ của mình.
-          </p>
-          <p>
-            Sứ mệnh của chúng tôi là giúp các doanh nghiệp phát triển thông qua việc áp dụng công nghệ tiên tiến và hiệu quả..
-          </p>
-          <nz-button nzType="primary" nzSize="large" [routerLink]="['/solutions']" class="cta-button">
-            Khám phá thêm.
-          </nz-button>
-        </div>
-        <div nz-col nzSpan="12" class="mt-2">
+      <div nz-col [nzXs]="24" [nzMd]="12" class="mt-4 md:mt-0">
+        <nz-card [nzBordered]="false" nzTitle="Lịch Sử Phát Triển" [nzExtra]="extraTemplate">
           <nz-timeline>
-            <nz-timeline-item [nzColor]="'green'">Được thành lập vào năm 2025 - Tầm nhìn ra đời</nz-timeline-item>
-            <!-- <nz-timeline-item [nzColor]="'blue'">First Product Launch - 2016</nz-timeline-item>
-            <nz-timeline-item [nzColor]="'purple'">Expanded to Global Markets - 2018</nz-timeline-item>
-            <nz-timeline-item [nzColor]="'red'">AI Division Launch - 2020</nz-timeline-item> -->
+            <nz-timeline-item nzColor="green">Được thành lập vào năm 2025 - Tầm nhìn ra đời</nz-timeline-item>
+            <nz-timeline-item nzColor="blue">Ra mắt sản phẩm đầu tiên - 2026</nz-timeline-item>
+            <nz-timeline-item nzColor="purple">Mở rộng thị trường toàn cầu - 2028</nz-timeline-item>
+            <nz-timeline-item nzColor="red">Thành lập bộ phận AI - 2030</nz-timeline-item>
           </nz-timeline>
+        </nz-card>
+        <ng-template #extraTemplate>
+          <a nz-typography nzType="secondary">Xem thêm</a>
+        </ng-template>
+      </div>
+    </div>
+
+    <nz-divider></nz-divider>
+
+    <h2 nz-typography class="section-heading text-center">Đội Ngũ Lãnh Đạo</h2>
+    <div nz-row [nzGutter]="[16, 24]" class="team-section">
+      <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="8" *ngFor="let member of teamMembers" class="team-member">
+        <nz-card [nzCover]="coverTemplate" [nzActions]="[linkedinAction, emailAction]">
+          <nz-card-meta
+            [nzTitle]="member.name"
+            [nzDescription]="member.position"
+          ></nz-card-meta>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img [alt]="member.name" [src]="member.avatarUrl" />
+        </ng-template>
+        <ng-template #linkedinAction>
+          <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+        </ng-template>
+        <ng-template #emailAction>
+          <span nz-icon nzType="mail" nzTheme="outline"></span>
+        </ng-template>
+      </div>
+    </div>
+
+    <nz-divider></nz-divider>
+
+    <div class="services-section">
+      <h2 nz-typography class="section-heading text-center">Dịch Vụ Của Chúng Tôi</h2>
+      <div nz-row [nzGutter]="[16, 16]">
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="6" *ngFor="let service of services">
+          <nz-card [nzCover]="serviceCoverTemplate">
+            <nz-card-meta
+              [nzTitle]="service.title"
+              [nzDescription]="service.description"
+            ></nz-card-meta>
+          </nz-card>
+          <ng-template #serviceCoverTemplate>
+            <div class="service-icon-container">
+              <span nz-icon [nzType]="service.icon" nzTheme="outline"></span>
+            </div>
+          </ng-template>
         </div>
       </div>
-  
-      <nz-divider></nz-divider>
-  
-      <div nz-row nzAlign="middle" nzGutter="24" class="team-section">
-        <div nz-col nzSpan="8" *ngFor="let member of teamMembers" class="team-member">
-          <nz-avatar [nzSrc]="member.avatarUrl" [nzSize]="128" class="team-avatar"></nz-avatar>
-          <h3 class="team-member-name">{{ member.name }}</h3>
-          <p class="team-member-position">{{ member.position }}</p>
-          <p class="team-member-bio">{{ member.bio }}</p>
-        </div>
-      </div>
-  
-      <nz-divider></nz-divider>
-  
-      <div class="services-section">
-        <!-- <h2 class="section-heading">What We Do</h2>
-        <p>We specialize in:</p>
-        <ul>
-          <li>Custom Software Development</li>
-          <li>AI and Machine Learning Solutions</li>
-          <li>Cloud-Based Platforms</li>
-          <li>End-to-End IT Services</li>
-        </ul> -->
-        <app-services></app-services>
-      </div>
-    </nz-card>
-  </div>
-  
+    </div>
+  </nz-card>
+</div>
